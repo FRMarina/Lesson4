@@ -18,6 +18,9 @@ if (text.includes(name === yourName)) {
 if (text.includes(yourName)) {
   console.log(text.toLowerCase());
 } else {
-  const newText: string = text.slice(0, text.indexOf(name)).concat(yourName).concat();
-  console.log(newText);
+  const firstNameIndex: number = text.indexOf(name);
+  const lastNameIndex: number = firstNameIndex + name.length;
+  const lastTextAfterName = text.slice(lastNameIndex);
+  const newText: string = text.slice(0, firstNameIndex).concat(yourName).concat(lastTextAfterName);
+  console.log(newText.toLowerCase());
 }
